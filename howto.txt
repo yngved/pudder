@@ -1,2 +1,3 @@
 git tutorial.
-written in branch 'home-branch'
+1. written in branch 'home-branch'
+2. Continue to test on branch 'home-branch'
