@@ -5,3 +5,5 @@ git tutorial.
 #1 Push branch to github
 git push origin 'branch' (git push origin branch)
 
+#2 Use git fetch/git merge instead of git pull
+
