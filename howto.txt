@@ -7,5 +7,6 @@ git push origin 'branch' (git push origin branch)
 
 #2 Use git fetch/git merge instead of git pull
 - git pull does a lot of magic
+- try to merge this into origin master 
 
 
