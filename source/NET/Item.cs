@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +31,7 @@ namespace IComparable
 
         #region IComparable<Item> Members
 
+        // Remember ToLower in implementation
         public int CompareTo(Item other)
         {
             if (this._folder.ToLower().CompareTo(other.Folder.ToLower()) == 0)
