@@ -17,7 +17,7 @@
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>jms-activemq-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>			
-		</dependency>	
+		</dependency>
 	</dependencies>
 	
 	<build>
@@ -72,10 +72,6 @@
 			</plugin>
 		</plugins>
 	</build>
-	
-	
-
-
 </project>
 
 

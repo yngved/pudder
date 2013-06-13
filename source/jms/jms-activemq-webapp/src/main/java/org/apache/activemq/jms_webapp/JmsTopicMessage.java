@@ -15,9 +15,9 @@ public class JmsTopicMessage implements MessageListener {
 		log.info("info->init");
 	}
 	
-	public void onMessage(Message message) {
-		System.out.println("JmsTopicMessage::onMessage()");
+	public void onMessage(Message message) {		
 		log.info("info->init -> onMessage");
+		log.debug("debug->init");
 		
 	}
 

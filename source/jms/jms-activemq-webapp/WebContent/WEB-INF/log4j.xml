@@ -6,21 +6,7 @@
   <appender name="CONSOLE-DEBUG" class="org.apache.log4j.ConsoleAppender">
     <layout class="org.apache.log4j.PatternLayout">
       <param name="ConversionPattern" value="%-5p - %-30c{1} - %m%n"/>
-    </layout>
-    <filter class="org.apache.log4j.varia.LevelMatchFilter">
-      <!-- 
-        With the acceptOnMatch set to true, the LevelToMatchFilter returns
-        Filter.ACCEPT for debug statements and prints them; it returns 
-        Filter.NEUTRAL for all other statements (i.e., unmatched statements)
-      -->
-      <param name="levelToMatch" value="debug"/>
-      <param name="acceptOnMatch" value="true"/>
-    </filter>
-    <!--
-      The DenyAllFilter handles all unmatched statements (i.e., those that
-      trigger Filter.NEUTRAL) from the LevelMatchFilter above
-     --> 
-    <filter class="org.apache.log4j.varia.DenyAllFilter"/>
+    </layout>    
   </appender>
 
   <!-- Filter info log messages to the console -->
@@ -34,23 +20,26 @@
     </filter>
     <filter class="org.apache.log4j.varia.DenyAllFilter"/>
   </appender>
-  
+   
   <logger name="org.apache">
     <level value="WARN"/>
   </logger>
   <logger name="org.springframework">
-    <level value="debug"/>
+    <level value="error"/>
   </logger>
+   
   <logger name="org.apache.activemq.common">
     <level value="debug"/>
-  </logger>  
-  <logger name="org.apache.activemq">
-    <level value="info"/>
   </logger>
+  <!--   
+  <logger name="org.apache.activemq">
+    <level value="error"/>
+  </logger>
+   -->
   <logger name="org.apache.activemq.store.kahadb">
     <level value="warn"/>
   </logger>
-  
+   
   
   <!-- 
    Comment/uncomment the appender-refs below depending on what kind of
@@ -60,8 +49,8 @@
   -->
   <root>
     <priority value="debug"/>
-    <!--<appender-ref ref="CONSOLE-DEBUG"/>-->
-    <appender-ref ref="CONSOLE-INFO"/>
+    <appender-ref ref="CONSOLE-DEBUG"/>
+    <!-- <appender-ref ref="CONSOLE-INFO"/> --> 
   </root>
   
 </log4j:configuration>
