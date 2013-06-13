@@ -15,7 +15,7 @@ public class TestJnlp {
     JLabel label = new JLabel();
     Container content = frame.getContentPane();
     content.add(label, BorderLayout.CENTER);
-    String message = "Jnln Hello Word";
+    String message = "Jnln First Test";
  
     label.setText(message);
  
