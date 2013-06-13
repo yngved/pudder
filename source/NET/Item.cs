@@ -33,6 +33,7 @@ namespace IComparable
 
         // Remember ToLower in implementation
         // Updated from work
+        // updated from 'jms-activemq' branch
         public int CompareTo(Item other)
         {
             if (this._folder.ToLower().CompareTo(other.Folder.ToLower()) == 0)
