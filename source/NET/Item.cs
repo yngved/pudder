@@ -32,6 +32,7 @@ namespace IComparable
         #region IComparable<Item> Members
 
         // Remember ToLower in implementation
+        // Updated from work
         public int CompareTo(Item other)
         {
             if (this._folder.ToLower().CompareTo(other.Folder.ToLower()) == 0)
