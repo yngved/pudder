@@ -14,5 +14,19 @@
     </dependency>
   </dependencies>
   
+
+  
+  <build>    
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>        
+      </resource>      
+    </resources>    
+    
+    <filters>
+	    <filter>src/main/resources/jnlp.prop</filter>
+	</filters>
+  </build> 
   
 </project>
