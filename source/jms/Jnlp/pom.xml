@@ -4,13 +4,62 @@
   <artifactId>JavaWebStart</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
+  <repositories>
+		<repository>
+			<id>sa-repo</id>
+			<name>SA repository group</name>
+			<url>http://st-tw568.statoil.net:8081/nexus/content/groups/sa-repo/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>snapshots</id>
+			<name>Snapshots</name>
+			<url>http://st-tw568.statoil.net:8081/nexus/content/repositories/snapshots/</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>fail</checksumPolicy>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>JEF_framework</id>
+			<name>Statoil JEF Framework</name>
+			<url>http://st-tw568.statoil.net:8081/nexus/content/repositories/JEF_framework/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>thirdparty</id>
+			<name>3rd Party</name>
+			<url>http://st-tw568.statoil.net:8081/nexus/content/repositories/thirdparty/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>sa-repo</id>
+			<name>SA repository group</name>
+			<url>http://st-tw568.statoil.net:8081/nexus/content/groups/sa-repo/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+  
+  
   <dependencies>
     <dependency>
       <groupId>javax.jnlp</groupId>
       <artifactId>jnlp-api</artifactId>
       <version>5.0</version>
       <scope>system</scope>
-      <systemPath>C:/Appl/java/jdk1.7.21/sample/jnlp/servlet/jnlp.jar</systemPath>
+      <systemPath>C:/Appl/Source/Java/jdk1.6.0_45/sample/jnlp/servlet/jnlp.jar</systemPath>
     </dependency>
   </dependencies>
   
