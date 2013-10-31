@@ -36,8 +36,17 @@ Write-Host("TargetHost=$targetHost")
 Write-Host("TargetPort=$targetPort")
 Write-Host("Cmd=$cmd")
 
+# use wget to get the source of the balancer-amanger, put it into a file called 'nonce.txt'
+$commandNonce = 'wget https://' + $targetHost + '.statoil.net/balancer-manager -O nonce.txt'
+iex $commandNonce
 
-$command = 'wget https://' + $targetHost + '.statoil.net/balancer-manager?lf=1"&"ls=0"&"wr="&"rr="&"dw=' + $cmd + '"&"w=ajp%3A%2F%2Flocalhost%3A' + $targetPort + '%2F' + $appl + '%2F"&"b=' + $targetEnv + '-' + $appl + 'cluster"&"nonce=feaf9233-fa74-274c-a0e5-8b97630f2876'
+# Find the first href line
+$hrefline = (Get-Content nonce.txt) | Where-Object {$_ -like "*href=*" } | Select-Object -first 1
+# Find the nonce value
+$regex = "(?<=nonce=)[^""]*(?="")"
+$nonce = $hrefline | select-string -Pattern $regex | % { $_.Matches } | % { $_.Value } 	
+
+# initialize command
+$command = 'wget https://' + $targetHost + '.statoil.net/balancer-manager?lf=1"&"ls=0"&"wr="&"rr="&"dw=' + $cmd + '"&"w=ajp%3A%2F%2Flocalhost%3A' + $targetPort + '%2F' + $appl + '%2F"&"b=' + $targetEnv + '-' + $appl + 'cluster"&"nonce=' + $nonce
 # execute command
 iex $command
-
